@@ -120,7 +120,11 @@
       <artifactId>fastjson</artifactId>
       <version>1.2.47</version>
     </dependency>
-
+    <!--springboot 基于Aop-->
+    <dependency>
+       <groupId>org.springframework.boot</groupId>
+       <artifactId>spring-boot-starter-aop</artifactId>
+    </dependency>
   </dependencies>
 
   <build>
@@ -129,6 +133,14 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <!-- spring-boot:run 中文乱码解决 -->
+        <configuration>
+          <fork>true</fork>
+          <!--增加jvm参数-->
+          <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
+          <mainClass>com.baizhi.Application</mainClass>
+          <layout>JAR</layout>
+        </configuration>
         <dependencies>
           <dependency>
             <groupId>org.springframework</groupId>
@@ -137,10 +149,6 @@
           </dependency>
         </dependencies>
         <version>1.4.2.RELEASE</version>
-        <configuration>
-          <mainClass>com.baizhi.Application</mainClass>
-          <layout>JAR</layout>
-        </configuration>
       </plugin>
     </plugins>
   </build>

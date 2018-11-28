@@ -4,7 +4,6 @@ server:
   jsp-servlet:
     init-parameters:
         development: true
-
 spring:
   mvc:
     view:
@@ -14,6 +13,9 @@ spring:
     encoding:
       force: true
       charset: utf-8
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     username: root

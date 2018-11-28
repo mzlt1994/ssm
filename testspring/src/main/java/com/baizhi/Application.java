@@ -12,11 +12,13 @@ import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.SpringVersion;
 import org.springframework.http.converter.HttpMessageConverter;
 
 @SpringBootApplication
 @MapperScan(value="com.baizhi.dao")
+@ComponentScan(value="com.baizhi.*")
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class,args);
